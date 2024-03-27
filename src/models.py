@@ -9,17 +9,17 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = "user"
     ID = Column(Integer, primary_key=True)
-    first_name = Column(String(25), nullable=False)
-    last_name = Column(String(25), nullable=False)
+    first_name = Column(String(150), nullable=False)
+    last_name = Column(String(150), nullable=False)
     email = Column(String(50), unique=True)
     password = Column(String(50))
 
 class Character(Base):
     __tablename__ = "character"
     ID = Column(Integer, primary_key=True)
-    name = Column(String(20), nullable=False)
-    race = Column(String(20), nullable=False)
-    loyal_to = Column(String(20), nullable=False)
+    name = Column(String(100), nullable=False)
+    species = Column(String(100), nullable=False)
+    loyal_to = Column(String(25), nullable=False)
     height = Column(Integer)
     weight = Column(Integer)
 
@@ -27,14 +27,15 @@ class Planet(Base):
     __tablename__ = "planet"
     ID = Column(Integer, primary_key=True)
     name = Column(String(20), nullable=False)
+    diameter = Column(Integer, nullable=False)
     population = Column(Integer)
 
 class Starship(Base):
     __tablename__ = "starship"
     ID = Column(Integer, primary_key=True)
-    name = Column(String(20), nullable=False)
-    model = Column(String(20))
-    loyal_to = Column(String(20), nullable=False)
+    name = Column(String(150), nullable=False)
+    model = Column(String(100), nullable=False)
+    manufacturer = Column(String(100), nullable=False)
    
 class FavoriteCharacters(Base):
     __tablename__ = "favorite-characters"
